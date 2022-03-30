@@ -1,0 +1,126 @@
+@import './variables';
+
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+//navbar scss start//
+.main-nav{
+  background-color: $backcolor;
+  width: 100%;
+  color: $text;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 10px 15px;
+  &__brand{
+    display: flex;
+    margin-right: 2.5rem;
+    gap: 1rem;
+    width: 12%;
+    .sidebar-btn{
+      background: none;
+      outline: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+      color: $text;
+      ion-icon{
+        font-size: 2rem;
+      }
+    }
+    .logo{
+      display: flex;
+      align-items: center;
+      font-size: 2rem;
+      gap: 0.5rem;
+      &__container{
+        ion-icon{
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+  &__search{
+    //width: 40%;
+    display: none; 
+  }
+  &__options{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    
+    .options-list{
+      display: flex;
+      align-items: center;
+      list-style-type: none;
+      gap: 0.5rem;
+      &__item{
+        button{
+          background: none;
+          outline: none;
+          border: none;
+          color: $text;
+          ion-icon{
+            font-size: 2rem;
+          }
+        }
+        .profile-img{
+          height: 50px;
+          width: 50px;
+          background-color: red;
+          border-radius: 50%;
+        }
+      }
+    }
+    
+  }
+  
+}
+
+@media screen and (min-width: 1440px) {
+  .main-nav{
+    padding: 10px 25px; 
+    &__search{
+      width: 40%;
+      display: flex;
+      align-items: center;
+      position: relative;
+      .search-text{
+        display: block;
+        width: 100%;
+        padding: 0.75rem;
+        border-radius: 8px;
+        font-size: 1.25rem;
+      }
+      ion-icon{
+        position: absolute;
+        color: #6C6C6C;
+        font-size: 2rem;
+        right: 10px;
+      }
+    }
+    &__options{
+      margin-left: auto;
+      .options-list{
+        gap: 1rem;
+        &__item{
+          .search-btn{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+//navbar scss end
